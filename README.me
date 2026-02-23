@@ -1,1 +1,93 @@
-﻿# TpJEE Injection des dépendances Fatima Zahra Azzabi
+# TP JEE - Inversion de Contrôle (IoC) & Injection de Dépendances
+
+## Réalisé par
+
+Fatima Zahra Azzabi
+ENSET - Génie Logiciel & Systèmes Distribués
+
+---
+
+## Objectif du TP
+
+Ce TP a pour objectif de comprendre le principe de l’Inversion de Contrôle (IoC) et l’Injection de Dépendances (DI) en Java, en utilisant :
+
+* L’injection statique
+* L’injection dynamique
+* Le Framework Spring (XML et Annotations)
+
+---
+
+##  Partie 1 : Création des Interfaces
+
+### 1. Interface IDao
+
+Interface contenant la méthode `getData()` qui retourne des données.
+
+### 2. Implémentation de IDao
+
+Création d’une classe DaoImpl qui implémente l’interface IDao.
+
+---
+
+##  Partie 2 : Couche Métier
+
+### 3. Interface IMetier
+
+Interface contenant la méthode `calcul()`.
+
+### 4. Implémentation avec Couplage Faible
+
+La classe MetierImpl utilise l’interface IDao au lieu d’une classe concrète afin de respecter le principe du couplage faible.
+
+---
+
+##  Partie 3 : Injection des Dépendances
+
+### a) Injection Statique
+
+L’injection est réalisée manuellement dans le code en instanciant les objets avec `new`.
+
+### b) Injection Dynamique
+
+Utilisation de la réflexion (Class.forName) pour injecter dynamiquement la dépendance à partir d’un fichier de configuration.
+
+---
+
+##  Partie 4 : Injection avec Spring Framework
+
+### 1. Configuration XML
+
+Utilisation du fichier `applicationContext.xml` dans le dossier resources pour configurer les beans Spring et injecter automatiquement les dépendances.
+
+### 2. Configuration avec Annotations
+
+Utilisation des annotations :
+
+* @Component
+* @Service
+* @Autowired
+  pour gérer l’injection des dépendances sans configuration XML.
+
+---
+
+##  Structure du Projet
+
+* src/main/java : Contient les classes Java (Dao, Metier, Présentation)
+* src/main/resources : Fichiers de configuration Spring (XML)
+* pom.xml : Dépendances Maven
+* README.md : Rapport du TP
+
+---
+
+##  Technologies Utilisées
+
+* Java
+* Maven
+* Spring Framework (IoC & DI)
+* Git & GitHub
+
+---
+
+##  Conclusion
+
+Ce TP nous a permis de comprendre l’importance du couplage faible, l’Inversion de Contrôle (IoC) et les différentes méthodes d’injection de dépendances, notamment avec Spring XML et les annotations.
