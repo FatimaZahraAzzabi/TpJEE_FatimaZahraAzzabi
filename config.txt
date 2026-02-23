@@ -1,0 +1,3 @@
+net.fz.dao.DaoImpl
+net.fz.metier.MetierImpl
+
